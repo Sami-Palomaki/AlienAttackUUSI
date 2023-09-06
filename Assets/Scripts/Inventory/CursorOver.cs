@@ -13,20 +13,21 @@ public class CursorOver : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     //    {
     //        if(canMove == true)
     // jne .... ettei liiku menussa ja pysäyttää ajan
-
     public void OnPointerEnter(PointerEventData eventData)
     {
         
         if(Time.timeScale == 1)
         {
-            // Shooting.canMove = false;
+            Debug.Log("OnPointer enter");
+            PlayerController.canMove = false;
         }
     }
     public void OnPointerExit(PointerEventData eventData)
     {
         if(Time.timeScale == 1)
         {
-            // Shooting.canMove = true;
+            Debug.Log("OnPointer exit");
+            PlayerController.canMove = true;
         }
     }
 

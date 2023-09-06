@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Gun
+  - GUI
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - UI
   - Shell
   - Character
-  - 
+  - GUI
   - 
   - 
   - 

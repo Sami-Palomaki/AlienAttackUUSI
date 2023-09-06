@@ -10,8 +10,6 @@ public class Entity : MonoBehaviour
     {
         health -= dmg;
 
-        Debug.Log(health);
-
         if (health <= 0)
         {
             Die();
@@ -20,7 +18,6 @@ public class Entity : MonoBehaviour
 
     public virtual void Die()
     {
-        Debug.Log("Dead");
         Destroy(gameObject);
     }
 }

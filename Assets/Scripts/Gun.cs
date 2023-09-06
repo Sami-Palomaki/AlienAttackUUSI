@@ -22,6 +22,7 @@ public class Gun : MonoBehaviour
     public Transform shellEjectionPoint;
     public Rigidbody shell;
     public Gun gunToCollect;
+    public float damage = 1;
 
 
     // System:
@@ -62,6 +63,11 @@ public class Gun : MonoBehaviour
             if (Physics.Raycast(ray, out hit, shotDistance, collisionMask))
             {
                 shotDistance = hit.distance;
+
+                if (hit.collider.GetComponent<Entity>())
+                {
+                    hit.collider.GetComponent<Entity>().TakeDamage(damage);
+                }
             }
 
             nextPossibleShootTime = Time.time + secondsBetweenShots;

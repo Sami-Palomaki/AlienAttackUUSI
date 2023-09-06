@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 07e66248149a9e14d8cb9f62f4c03da9
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Fjalla One
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 3597a785e35073e4b957011f3fbfab5d, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

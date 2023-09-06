@@ -17,14 +17,17 @@ public class PlayerController : MonoBehaviour
     private Vector3 currentVelocityMod;
 
     // Components
+    public GameObject inventoryCanvas;
     public Transform handHold;
     public Gun[] guns;
     private Gun collectedGun;
+    private bool isInventoryOpen = false;
     
     private Gun currentGun;
     private CharacterController controller;
     private Camera cam;
     private Animator animator; // Lisätty Animator-komponentti
+    public static bool canMove = true;
 
 
 
@@ -47,13 +50,31 @@ public class PlayerController : MonoBehaviour
         // Gun Input
         if (currentGun)
         {
+           
             if (Input.GetButtonDown("Shoot"))
             {
-                currentGun.Shoot();
+                if(canMove == true)
+                {
+                    currentGun.Shoot();
+                }
             }
             else if (Input.GetButton("Shoot"))
             {
-                currentGun.ShootContinuous();
+                if(canMove == true)
+                {
+                    currentGun.ShootContinuous();
+                }   
+            }
+
+            // Tarkista, onko pelaaja painanut I-näppäintä
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                // Vaihda InventoryCanvasin tilaa käyttämällä aktiivisuutta
+                isInventoryOpen = !isInventoryOpen;
+                inventoryCanvas.SetActive(isInventoryOpen);
+
+                // Pysäytä tai jatka pelin aikaa sen mukaan, onko InventoryCanvas päällä
+                Time.timeScale = isInventoryOpen ? 0f : 1f;
             }
         }
 

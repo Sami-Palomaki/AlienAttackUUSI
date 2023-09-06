@@ -23,6 +23,11 @@ PrefabInstance:
       propertyPath: gunToCollect
       value: 
       objectReference: {fileID: 6572043121145833018}
+    - target: {fileID: 85350414935314851, guid: a76470e942bbed640b44ba7b8e7222fb,
+        type: 3}
+      propertyPath: collisionMask.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 214689045282762762, guid: a76470e942bbed640b44ba7b8e7222fb,
         type: 3}
       propertyPath: m_LocalPosition.x
