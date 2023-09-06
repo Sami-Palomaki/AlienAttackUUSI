@@ -28,9 +28,9 @@ public class InventoryItems : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // inventoryMenu.SetActive(false);
-        // inventoryOpen.SetActive(false);
-        // inventoryClosed.SetActive(true);  
+        inventoryMenu.SetActive(false);
+        inventoryOpen.SetActive(false);
+        inventoryClosed.SetActive(true);  
         max = emptySlots.Length;
 
         //temp
@@ -58,17 +58,17 @@ public class InventoryItems : MonoBehaviour
     }
     public void OpenMenu()
     {
-        // inventoryMenu.SetActive(true);
-        // inventoryOpen.SetActive(true);
-        // inventoryClosed.SetActive(false);
+        inventoryMenu.SetActive(true);
+        inventoryOpen.SetActive(true);
+        inventoryClosed.SetActive(false);
         Time.timeScale = 0f;
 
     }
     public void ClosedMenu()
     {
-        // inventoryMenu.SetActive(false);
-        // inventoryOpen.SetActive(false);
-        // inventoryClosed.SetActive(true);
+        inventoryMenu.SetActive(false);
+        inventoryOpen.SetActive(false);
+        inventoryClosed.SetActive(true);
         Time.timeScale = 1f;
         
     }
