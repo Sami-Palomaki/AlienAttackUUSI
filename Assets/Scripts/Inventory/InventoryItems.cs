@@ -25,6 +25,8 @@ public class InventoryItems : MonoBehaviour
     public static int pistol = 0;
 
     public static int shotgun = 0;
+
+    public static int gold = 300;
     // Start is called before the first frame update
     void Start()
     {
