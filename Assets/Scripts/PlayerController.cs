@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator; // Lisätty Animator-komponentti
     public static bool canMove = true;
 
+    public static bool moving = false; //kauppaa varten, jos o vauhdis niin katoo
 
 
 
