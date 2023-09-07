@@ -63,9 +63,9 @@ public class Player : MonoBehaviour
             Destroy(this.gameObject);
             // healthBar.value = health;
             // isGameOver = true;
-            anim.SetTrigger("dying");
+            // anim.SetTrigger("dying");
             // StartCoroutine(GameOverAfterDelay(5f));
-            //GameOver();
+            // GameOver();
         }
     }
 }
