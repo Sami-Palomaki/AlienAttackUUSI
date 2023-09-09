@@ -46,10 +46,25 @@ public class InventoryItems : MonoBehaviour
 
     public GameObject[] usables;
 
+    public int instantiatedWeapon = 0;
+
+    //public Transform weaponSlot;
+    public GameObject weaponPrefab;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        /*GameObject pelaaja = GameObject.Find("Pelaaja");
+        if (pelaaja != null)
+        {
+            Transform weaponSlotTransform = pelaaja.transform.Find("WeaponSlot");
+            if(weaponSlotTransform != null)
+            {
+                GameObject weaponSlot = weaponSlotTransform.gameObject;
+            }
+        }*/
+        
         inventoryMenu.SetActive(false);
         inventoryOpen.SetActive(false);
         inventoryClosed.SetActive(true);  
@@ -91,9 +106,24 @@ public class InventoryItems : MonoBehaviour
                     set = false;
                     UISlots[i].sprite = magicIcons[selected];
                     magicAttack[i] =  selected;
+                    Debug.Log(selected);
                     Removed(selected);
                 }
             }
+        }
+        
+        if(Input.GetKeyDown(keys[0]))
+        {
+            GameObject weaponPrefab = usables[magicAttack[0]];
+
+            //GameObject instantiatedWeapon = Instantiate(weaponPrefab, weaponSlot);
+            GameObject pelaaja = GameObject.Find("Pelaaja");
+            //Transform weaponSlotTransform = pelaaja.transform.Find("WeaponSlot");
+            weaponPrefab.transform.parent = pelaaja.transform.Find("WeaponSlot");
+            weaponPrefab.transform.localPosition = Vector3.zero;
+            weaponPrefab.transform.localRotation = Quaternion.identity;
+
+
         }
     }
     public void OpenMenu()

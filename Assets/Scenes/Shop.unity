@@ -695,7 +695,7 @@ PrefabInstance:
     - target: {fileID: 2498622208913404503, guid: 75960641aeb893648a0e34a204d5f1e1,
         type: 3}
       propertyPath: m_Name
-      value: Player 1
+      value: Pelaaja
       objectReference: {fileID: 0}
     - target: {fileID: 3928478069194123804, guid: 75960641aeb893648a0e34a204d5f1e1,
         type: 3}
@@ -2363,8 +2363,11 @@ MonoBehaviour:
   magicAttack: 000000000000000000000000000000000000000000000000
   usables:
   - {fileID: 3819280570972242614, guid: 7942e7c48b3ec2a438525a4f5e716ce6, type: 3}
+  - {fileID: 3819280570972242614, guid: 7942e7c48b3ec2a438525a4f5e716ce6, type: 3}
   - {fileID: 919132149155446097, guid: 1aa590c605f05a34e9c840b37d4c3d87, type: 3}
   - {fileID: 1666476814915484366, guid: 3ad5301fc5b3976498f09500ebac98e5, type: 3}
+  instantiatedWeapon: 0
+  weaponPrefab: {fileID: 0}
 --- !u!114 &377954947
 MonoBehaviour:
   m_ObjectHideFlags: 0
