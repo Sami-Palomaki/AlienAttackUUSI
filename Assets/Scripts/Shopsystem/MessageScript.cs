@@ -43,6 +43,7 @@ public class Message : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         shopOwnerMessage.text = "Here is some stuff that could help you slay those beasts!";
 
         shopUI.SetActive(true);
+        shopUI.GetComponent<BuyScript>().UpdateGold();
 
     }
 

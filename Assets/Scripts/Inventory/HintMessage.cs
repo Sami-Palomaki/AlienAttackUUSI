@@ -16,6 +16,9 @@ public class HintMessage : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public int objectType = 0;
 
+    public GameObject inventoryObject;
+    public bool magic = false;
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         overIcon = true;
@@ -52,6 +55,11 @@ public class HintMessage : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             {
                 displaying = false;
                 hintBox.SetActive(false);
+                //if(magic == true)
+                //{
+                inventoryObject.GetComponent<InventoryItems>().selected = objectType;
+                inventoryObject.GetComponent<InventoryItems>().set = true;
+                //}
 
             }
         }

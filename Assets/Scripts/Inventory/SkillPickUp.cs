@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUps : MonoBehaviour
+public class SkillPickUps : MonoBehaviour
 {
     public int number;
 
-    public bool healthPack = false;
+    public bool heal = false;
 
-    public bool pistol = false;
-
-    public bool shotgun = false; 
 
     public float rotationSpeed = 30.0f;
 
@@ -18,7 +15,7 @@ public class PickUps : MonoBehaviour
     {
         
         
-        if(other.CompareTag("Player"))
+        /*if(other.CompareTag("Player"))
         {
             if(healthPack == true)
             {
@@ -28,10 +25,10 @@ public class PickUps : MonoBehaviour
                 }
                 InventoryItems.healthPack++;
                 Destroy(gameObject);
-            }
+            }*/
                  
            
-            else if(pistol == true)
+            /*else if(pistol == true)
             {
                 if(InventoryItems.pistol == 0)
                 {
@@ -54,9 +51,9 @@ public class PickUps : MonoBehaviour
                 DisplayIcons();
                 Destroy(gameObject);
 
-            }
+            }*/
 
-        }
+        
     }
     void DisplayIcons()
     {

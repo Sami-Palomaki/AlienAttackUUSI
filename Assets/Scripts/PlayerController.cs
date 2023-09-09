@@ -79,14 +79,14 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < guns.Length; i++)
+        /*for (int i = 0; i < guns.Length; i++)
         {
             if (Input.GetKeyDown((i+1) + "") || Input.GetKeyDown("[" + (i+1) + "]"))
             {
                 EquipGun(i);
                 break;
             }
-        }
+        }*/
     }
 
     void EquipGun(int i)
