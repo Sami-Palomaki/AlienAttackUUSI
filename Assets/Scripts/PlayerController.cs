@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
         //ControlWASD();
         
         // Gun Input
-        if (currentGun)
+        if (collectedGun)
         {
            
             if (Input.GetButtonDown("Shoot"))
@@ -90,14 +90,18 @@ public class PlayerController : MonoBehaviour
 
     void EquipGun(int i)
     {
-        if (currentGun)
+        if (collectedGun)
         {
-            Destroy(currentGun.gameObject);
-        }
 
-        currentGun = Instantiate(guns[i], handHold.position, handHold.rotation) as Gun;
-        currentGun.transform.parent = handHold;
-        animator.SetFloat("Weapon ID", currentGun.gunID);
+            if (currentGun)
+            {
+                Destroy(currentGun.gameObject);
+            }
+
+            currentGun = Instantiate(guns[i], handHold.position, handHold.rotation) as Gun;
+            currentGun.transform.parent = handHold;
+            animator.SetFloat("Weapon ID", currentGun.gunID);
+        }
     }
 
     // Metodi aseen lisäämiseksi listaan
