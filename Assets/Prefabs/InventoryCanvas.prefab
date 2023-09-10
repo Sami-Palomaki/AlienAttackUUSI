@@ -2713,7 +2713,8 @@ MonoBehaviour:
     \t            Skillls"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3e9c35b7e18064e40985c8328ce55aa2, type: 2}
-  m_sharedMaterial: {fileID: 1522986472367774474, guid: 3e9c35b7e18064e40985c8328ce55aa2, type: 2}
+  m_sharedMaterial: {fileID: 1522986472367774474, guid: 3e9c35b7e18064e40985c8328ce55aa2,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
