@@ -47,7 +47,7 @@ public class Enemy : Entity
             if (Time.time - lastAttackTime > attackCD) // Tarkistetaan, onko kulunut tarpeeksi aikaa viime hyökkäyksestä
             {
                 lastAttackTime = Time.time; // Päivitetään viime hyökkäyksen aika
-                //anim.SetBool("isAttacking", true);
+                anim.SetBool("isAttacking", true);
                 //anim.SetTrigger("attack");
                 
                 StartAttack();
@@ -90,7 +90,7 @@ public class Enemy : Entity
             AudioManager.instance.Play(zombieSound, this.gameObject);
             FaceTarget();       // Vihollinen katsoo sinua päin kun hyökkää
         
-            anim.SetTrigger("attack");
+            // anim.SetTrigger("attack");
             DoDamage();
             
         }
@@ -126,11 +126,11 @@ public class Enemy : Entity
         Gizmos.DrawWireSphere(attackPos.position, radius);
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.TryGetComponent<Player>(out Player player))
-        {
-            player.TakeDamage(10);
-        }
-    }
+    // void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.gameObject.TryGetComponent<Player>(out Player player))
+    //     {
+    //         player.TakeDamage(10);
+    //     }
+    // }
 }
