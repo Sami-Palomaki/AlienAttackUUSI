@@ -14,8 +14,7 @@ public class Player : MonoBehaviour
     private GameGUI gui;
     public string hurtSound;
     public GameObject player;
-    Animator anim;
-    bool isGameOver = false; // Lisää tämä muuttuja
+
 
     void Start()
     {
