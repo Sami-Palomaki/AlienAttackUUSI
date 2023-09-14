@@ -1,4 +1,4 @@
-using System;
+                                                            using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     private Camera cam;
     private Animator animator; // Lisätty Animator-komponentti
     public static bool canMove = true;
+    public bool isDead;
 
 
 
@@ -44,8 +45,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        ControlMouse();
-        //ControlWASD();
+        if (!isDead)
+        {
+            ControlMouse();
+            //ControlWASD();
+        }
         
         // Gun Input
         if (collectedGun)

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class Player : MonoBehaviour
     private GameGUI gui;
     public string hurtSound;
     public GameObject player;
+    private Animator anim;
+    private Health _health;
+    private PlayerController playerController;
 
 
     void Start()
@@ -21,7 +25,8 @@ public class Player : MonoBehaviour
         health = maxHealth;
         healthBar.maxValue = maxHealth;
         healthBar.value = health;
-        //anim = GetComponentInChildren<Animator>();
+        playerController = GetComponent<PlayerController>();
+        anim = GetComponentInChildren<Animator>();
         gui = GameObject.FindGameObjectWithTag("GUI").GetComponent<GameGUI>();
         LevelUp();
     }
@@ -59,12 +64,15 @@ public class Player : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(this.gameObject);
-            // healthBar.value = health;
-            // isGameOver = true;
-            // anim.SetTrigger("dying");
-            // StartCoroutine(GameOverAfterDelay(5f));
-            // GameOver();
+            playerController.isDead = true;
+            anim.SetTrigger("dying");
+            Invoke("GameOver", 5f);
         }
+    }
+
+    void GameOver()
+    {       
+        Debug.Log("game over");
+        //SceneManager.LoadScene("GameOver");
     }
 }

@@ -28,37 +28,24 @@ public class Health : MonoBehaviour
         healthBar.value = health;
     }
 
-    public void TakeDamage(float damage)
-    {
-        if (player != null && health > 0) {
-        health -= damage;
-        AudioManager.instance.Play(hurtSound, this.gameObject);
-        }
+    // public void TakeDamage(float damage)
+    // {
+    //     if (player != null && health > 0) {
+    //     health -= damage;
+    //     AudioManager.instance.Play(hurtSound, this.gameObject);
+    //     }
 
 
-        if (health <= 0) 
-        {
-            // isGameOver = true;
-            anim.SetTrigger("dying");
-            StartCoroutine(GameOverAfterDelay(5f));
-            //GameOver();
-        }
-    }
+    //     if (health <= 0) 
+    //     {
+    //         // isGameOver = true;
+    //         anim.SetTrigger("dying");
+    //         StartCoroutine(GameOverAfterDelay(5f));
+    //         //GameOver();
+    //     }
+    // }
 
-    IEnumerator GameOverAfterDelay(float delay)
-    {
-        // Pysäytetään pelaajan liikkuminen asettamalla Rigidbody pois päältä
-        Rigidbody playerRigidbody = player.GetComponent<Rigidbody>();
-        if (playerRigidbody != null)
-        {
-            playerRigidbody.velocity = Vector3.zero;
-            playerRigidbody.angularVelocity = Vector3.zero;
-            playerRigidbody.isKinematic = true;
-        }
-
-        yield return new WaitForSeconds(delay); // Odota annettu aika
-        GameOver(); // Kutsu GameOver-metodia
-    }
+    
     
     public void Heal(int amount)
     {
@@ -73,9 +60,6 @@ public class Health : MonoBehaviour
         }
     }
 
-    void GameOver()
-    {       
-        SceneManager.LoadScene("GameOver");
-    }
+    
 
 }
