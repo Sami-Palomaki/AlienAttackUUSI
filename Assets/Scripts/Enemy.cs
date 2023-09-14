@@ -7,22 +7,22 @@ using UnityEngine.UI;
 
 public class Enemy : Entity
 {
-    public float expOnDeath;
+    [SerializeField] private float disappearDelay = 15f;
     public Transform target;
+    public float expOnDeath;
     public float maxSpeed = 5;
     public float radius = 1;
-    public bool isWalking = false;
     public int damage = 15;
     public float attackCD;
-    public Transform attackPos;
     public string zombieSound;
     public Slider healthBar;
-    private float dist;
-    private float lastAttackTime = 2f; // Alustetaan aika niin pieneksi, että vihollinen voi hyökätä heti alussa
-    bool isDead = false;
     NavMeshAgent agent;
     Animator anim;
+    private float dist;
+    private float lastAttackTime = 2f; // Alustetaan aika niin pieneksi, että vihollinen voi hyökätä heti alussa
     private Player player;
+    private bool enemy_is_dead;
+    bool isDead = false;
 
     void Start()
     {
@@ -40,7 +40,6 @@ public class Enemy : Entity
     void Update()
     {
         dist = Vector3.Distance(target.position, transform.position);
-        // healthBar.value = health;
 
         if (dist <= agent.stoppingDistance)
         {
@@ -48,7 +47,6 @@ public class Enemy : Entity
             {
                 lastAttackTime = Time.time; // Päivitetään viime hyökkäyksen aika
                 anim.SetBool("isAttacking", true);
-                //anim.SetTrigger("attack");
                 
                 StartAttack();
             }
@@ -67,36 +65,39 @@ public class Enemy : Entity
 
         if (health <= 0)
         {
-            // anim.SetBool("isDying", true);
+            anim.SetBool("isDying", true);
             Die();
         }
     }
 
     public override void Die()
     {
+        agent.isStopped = true;
+        enemy_is_dead = true;
         player.AddExperience(expOnDeath);
+
+        // Lisää viholliselle aikaviive ennen katoamista
+        StartCoroutine(DisappearAfterDelay(disappearDelay));
+
         base.Die();
     }
 
     public void StartAttack()
     {
-        if (isDead)
+        if (enemy_is_dead)
         {
             return;
         }
         else
         {
-
             AudioManager.instance.Play(zombieSound, this.gameObject);
             FaceTarget();       // Vihollinen katsoo sinua päin kun hyökkää
         
-            // anim.SetTrigger("attack");
-            DoDamage();
-            
+            DoDamage(); 
         }
     }
 
-    public void AttackAnimationEvent()
+    public void DoDamage()
     {
         Player playerHealth = FindObjectOfType<Player>();
         
@@ -113,24 +114,11 @@ public class Enemy : Entity
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
 
-
-    public void DoDamage()
+    private IEnumerator DisappearAfterDelay(float delay)
     {
-        Debug.Log("Tuleeko DODAMAGE metodiin?");
-        AttackAnimationEvent();
+        yield return new WaitForSeconds(delay);
+        
+        // Tuhotaan vihollinen
+        Destroy(gameObject);
     }
-
-    void OnDrawGizmosSelected()                             // Vihollisen hyökkäys-gizmot
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPos.position, radius);
-    }
-
-    // void OnTriggerEnter(Collider other)
-    // {
-    //     if (other.gameObject.TryGetComponent<Player>(out Player player))
-    //     {
-    //         player.TakeDamage(10);
-    //     }
-    // }
 }

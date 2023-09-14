@@ -72,7 +72,6 @@ public class Player : MonoBehaviour
 
     void GameOver()
     {       
-        Debug.Log("game over");
-        //SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene("GameOver");
     }
 }

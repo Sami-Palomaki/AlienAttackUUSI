@@ -26,12 +26,6 @@ public class Entity : MonoBehaviour
     {
         // agent.isStopped = true; // Pysäyttää NavMeshAgentin liikkumisen
         // Invoke("DestroyGameObject", 35f);
-        Destroy(gameObject);
-    }
-
-    private void DestroyGameObject()
-    {
-        // Tuhotaan tämä GameObject
-        Destroy(gameObject);
+        // Destroy(gameObject);
     }
 }
