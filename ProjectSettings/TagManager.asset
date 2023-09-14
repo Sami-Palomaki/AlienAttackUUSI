@@ -9,6 +9,8 @@ TagManager:
   - GUI
   - Enemy
   - Wall
+  - Door
+  - TriggerZone
   layers:
   - Default
   - TransparentFX

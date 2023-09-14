@@ -684,16 +684,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 825567d939d64b943af71004bef3e16a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
-  maxHealth: 15
-  expOnDeath: 40
+  health: 12
+  maxHealth: 12
+  disappearDelay: 12
   target: {fileID: 0}
+  expOnDeath: 40
   maxSpeed: 5
   radius: 1
-  isWalking: 0
   damage: 15
   attackCD: 1
-  attackPos: {fileID: 0}
   zombieSound: 
   healthBar: {fileID: 2633204811483433885}
 --- !u!114 &1569749785712890455
