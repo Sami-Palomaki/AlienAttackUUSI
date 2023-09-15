@@ -21,37 +21,37 @@ PrefabInstance:
     - target: {fileID: 3000985454699107808, guid: a76470e942bbed640b44ba7b8e7222fb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3000985454699107808, guid: a76470e942bbed640b44ba7b8e7222fb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.041
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3000985454699107808, guid: a76470e942bbed640b44ba7b8e7222fb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.004
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3000985454699107808, guid: a76470e942bbed640b44ba7b8e7222fb,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9942
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3000985454699107808, guid: a76470e942bbed640b44ba7b8e7222fb,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.055050407
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3000985454699107808, guid: a76470e942bbed640b44ba7b8e7222fb,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.09232099
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3000985454699107808, guid: a76470e942bbed640b44ba7b8e7222fb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.003564725
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3000985454699107808, guid: a76470e942bbed640b44ba7b8e7222fb,
         type: 3}
@@ -71,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 5565090639070268759, guid: a76470e942bbed640b44ba7b8e7222fb,
         type: 3}
       propertyPath: m_Name
-      value: Pistol
+      value: Pyssy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
