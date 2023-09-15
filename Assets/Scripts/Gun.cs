@@ -23,6 +23,7 @@ public class Gun : MonoBehaviour
     public Rigidbody shell;
     public Gun gunToCollect;
     public float damage = 1;
+    public Crosshair crosshair;
 
 
     // System:
@@ -41,6 +42,7 @@ public class Gun : MonoBehaviour
 
     void Start()
     {
+        crosshair = FindObjectOfType<Crosshair>();
         secondsBetweenShots = 60/rpm;
         if (GetComponent<LineRenderer>())
         {
@@ -54,8 +56,9 @@ public class Gun : MonoBehaviour
         {
             // CALCULATE NEW VECTOR3, y=0
 
-
-            Ray ray = new Ray(spawn.position, spawn.forward);
+            Vector3 targetDir = crosshair.transform.position - transform.position;
+            Vector3 fixedDir = new Vector3(targetDir.x, 0, targetDir.z);
+            Ray ray = new Ray(spawn.position, fixedDir.normalized);
             RaycastHit hit;
 
             float shotDistance = 20;

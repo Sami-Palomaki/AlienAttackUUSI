@@ -1,4 +1,4 @@
-using System;
+                                                            using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     private Camera cam;
     private Animator animator; // Lisätty Animator-komponentti
     public static bool canMove = true;
+    public bool isDead;
 
     public static bool moving = false; //kauppaa varten, jos o vauhdis niin katoo
 
@@ -45,11 +46,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        ControlMouse();
-        //ControlWASD();
+        if (!isDead)
+        {
+            ControlMouse();
+            //ControlWASD();
+        }
         
         // Gun Input
-        if (currentGun)
+        if (collectedGun)
         {
            
             if (Input.GetButtonDown("Shoot"))
@@ -91,14 +95,18 @@ public class PlayerController : MonoBehaviour
 
     void EquipGun(int i)
     {
-        if (currentGun)
+        if (collectedGun)
         {
-            Destroy(currentGun.gameObject);
-        }
 
-        currentGun = Instantiate(guns[i], handHold.position, handHold.rotation) as Gun;
-        currentGun.transform.parent = handHold;
-        animator.SetFloat("Weapon ID", currentGun.gunID);
+            if (currentGun)
+            {
+                Destroy(currentGun.gameObject);
+            }
+
+            currentGun = Instantiate(guns[i], handHold.position, handHold.rotation) as Gun;
+            currentGun.transform.parent = handHold;
+            animator.SetFloat("Weapon ID", currentGun.gunID);
+        }
     }
 
     // Metodi aseen lisäämiseksi listaan
