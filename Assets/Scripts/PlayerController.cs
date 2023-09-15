@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 [RequireComponent (typeof (CharacterController))]
 public class PlayerController : MonoBehaviour
 {
@@ -19,11 +21,9 @@ public class PlayerController : MonoBehaviour
     // Components
     public GameObject inventoryCanvas;
     public Transform handHold;
-    public Gun[] guns;
-    private Gun collectedGun;
-    private bool isInventoryOpen = false;
-    
-    private Gun currentGun;
+  
+    public ShootShotGun shotgun;
+
     private CharacterController controller;
     private Camera cam;
     private Animator animator; // Lisätty Animator-komponentti
@@ -35,40 +35,51 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        
         controller = GetComponent<CharacterController>();
         cam = Camera.main;
         animator = GetComponent<Animator>(); // Haetaan Animator-komponentti
 
-        EquipGun(0);
+        
+        //quipGun(0);
     }
 
 
     void Update()
     {
-        ControlMouse();
+        ControlWASD();
+        if (Input.GetButtonDown("Shoot"))
+            {
+                if(canMove == true)
+                {
+                    shotgun.Shoot();
+                    //ShootShotGun.Shoot();
+                }
+            }
         //ControlWASD();
         
         // Gun Input
-        if (currentGun)
-        {
-           
-            if (Input.GetButtonDown("Shoot"))
+        //if (currentGun)
+            //{
+            //ShootShotGun shootShotGun = new ShootShotGun();
+            //if (Input.GetButtonDown("Shoot"))
+            //{
+                //if(canMove == true)
+                //{
+            //        ShootShotGun.Shoot();
+                    //ShootShotGun.Shoot();
+                //}
+            //}
+            /*else if (Input.GetButton("Shoot"))
             {
                 if(canMove == true)
                 {
-                    currentGun.Shoot();
-                }
-            }
-            else if (Input.GetButton("Shoot"))
-            {
-                if(canMove == true)
-                {
-                    currentGun.ShootContinuous();
+                    shotgun.ShootContinuous();
                 }   
-            }
+            }*/
 
             // Tarkista, onko pelaaja painanut I-näppäintä
-            if (Input.GetKeyDown(KeyCode.I))
+            /*if (Input.GetKeyDown(KeyCode.I))
             {
                 // Vaihda InventoryCanvasin tilaa käyttämällä aktiivisuutta
                 isInventoryOpen = !isInventoryOpen;
@@ -76,8 +87,8 @@ public class PlayerController : MonoBehaviour
 
                 // Pysäytä tai jatka pelin aikaa sen mukaan, onko InventoryCanvas päällä
                 Time.timeScale = isInventoryOpen ? 0f : 1f;
-            }
-        }
+            }*/
+        //}
 
         /*for (int i = 0; i < guns.Length; i++)
         {
@@ -89,20 +100,20 @@ public class PlayerController : MonoBehaviour
         }*/
     }
 
-    void EquipGun(int i)
+    /*void EquipGun(int i)
     {
         if (currentGun)
         {
             Destroy(currentGun.gameObject);
         }
 
-        currentGun = Instantiate(guns[i], handHold.position, handHold.rotation) as Gun;
+        currentGun = Instantiate(guns[i], handHold.position, handHold.rotation) as ShootShotGun;
         currentGun.transform.parent = handHold;
         animator.SetFloat("Weapon ID", currentGun.gunID);
-    }
+    }*/
 
     // Metodi aseen lisäämiseksi listaan
-    public void AddCollectedGun(Gun newGun)
+    /*public void AddCollectedGun(Gun newGun)
     {
         collectedGun = newGun;
 
@@ -113,7 +124,7 @@ public class PlayerController : MonoBehaviour
             Array.Resize(ref guns, newLength);
             guns[newLength - 1] = collectedGun;
         }
-    }
+    }*/
 
     void ControlMouse()
     {
@@ -154,4 +165,5 @@ public class PlayerController : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Sqrt(motion.x * motion.x + motion.z * motion.z));
     }
+
 }

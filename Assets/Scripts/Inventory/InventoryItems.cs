@@ -24,6 +24,8 @@ public class InventoryItems : MonoBehaviour
     private int max;
     
     private int maxTwo;
+
+    public static int heal = 0;
     public static int healthPack = 0;
 
     public static int pistol = 0;
@@ -36,35 +38,32 @@ public class InventoryItems : MonoBehaviour
 
     public Sprite[] magicIcons;
 
+    public Sprite[] skillIcons;
+
     public KeyCode[] keys;
 
     public bool set = false;
+
+    public bool setTwo = false;
     [HideInInspector]
     public int selected = 0;
 
     public int[] magicAttack;
 
-    public GameObject[] usables;
+    public GameObject[] magicParticles;
+    //public WeaponSlot weaponSlot;
+    public Transform weaponHolder;
 
-    public int instantiatedWeapon = 0;
-
-    //public Transform weaponSlot;
-    public GameObject weaponPrefab;
+    
 
 
+
+    //private Weaponslot weaponslot;
     // Start is called before the first frame update
     void Start()
     {
-        /*GameObject pelaaja = GameObject.Find("Pelaaja");
-        if (pelaaja != null)
-        {
-            Transform weaponSlotTransform = pelaaja.transform.Find("WeaponSlot");
-            if(weaponSlotTransform != null)
-            {
-                GameObject weaponSlot = weaponSlotTransform.gameObject;
-            }
-        }*/
-        
+        //playerObject = GameObject.Find("Pelaaja");
+        //weaponSlot = playerObject.mixarig:Hips.mixamorig:Spine.mixamorig:Spine2.mixamorig:RightShoulder.mixamorig:RightArm.mixamorig:RightForeArm.mixamorig:RightHand.Weaponslot;
         inventoryMenu.SetActive(false);
         inventoryOpen.SetActive(false);
         inventoryClosed.SetActive(true);  
@@ -74,9 +73,24 @@ public class InventoryItems : MonoBehaviour
         healthPack = 0;
         pistol = 0;
         shotgun = 0;
+        heal = 0;
     }
 
     // Update is called once per frame
+    
+    /*void Empty()
+    {
+        
+        
+        {
+            // Get the first child (assuming only one weapon).
+            
+            EmptySlot(transform.GetChild(0).SetParent(null));
+            // Detach the weapon from the weapon slot.
+          
+        }
+    }*/
+    
     void Update()
     {
         if(iconUpdate == true)
@@ -106,24 +120,93 @@ public class InventoryItems : MonoBehaviour
                     set = false;
                     UISlots[i].sprite = magicIcons[selected];
                     magicAttack[i] =  selected;
-                    Debug.Log(selected);
-                    Removed(selected);
+                    //Removed(selected);
                 }
             }
         }
-        
-        if(Input.GetKeyDown(keys[0]))
+        /*if(setTwo == true)
         {
-            GameObject weaponPrefab = usables[magicAttack[0]];
+           
+            for(int i = 0; i < UISlots.Length; i++)
+            {
+                if(Input.GetKeyDown(keys[i]))
+                {
+                    setTwo = false;
+                    UISlots[i].sprite = skillIcons[selected];
+                    magicAttack[i] =  selected + 6;
+                    //Removed(selected);
+                }
+            }
+        }*/
+        if(Input.anyKey && Time.timeScale == 1)
+        {
+            for(int i = 0; i < UISlots.Length; i++)
+            {
+                if(Input.GetKeyDown(keys[i]))
+                {
+                   if(UISlots[i].sprite != emptyIcon)
+                   {
+                        //if(UISlots[i].sprite == magicParticles[magicAttack[i]])
+                            
+                            //{   
 
-            //GameObject instantiatedWeapon = Instantiate(weaponPrefab, weaponSlot);
-            GameObject pelaaja = GameObject.Find("Pelaaja");
-            //Transform weaponSlotTransform = pelaaja.transform.Find("WeaponSlot");
-            weaponPrefab.transform.parent = pelaaja.transform.Find("WeaponSlot");
-            weaponPrefab.transform.localPosition = Vector3.zero;
-            weaponPrefab.transform.localRotation = Quaternion.identity;
+                            
+                            if(magicParticles[magicAttack[i]] == magicParticles[3])
+                            {
+                                Debug.Log("shotgun");
+                                
+                                
+                                //
+                                
+                        
+                            
+                                magicParticles[3].transform.SetParent(weaponHolder);
+                                magicParticles[3].transform.localPosition = Vector3.zero;
+                                magicParticles[3].transform.localRotation = Quaternion.identity;
+                            
 
+                                //magicParticles[3].transform.parent = weaponHolder;
+                                //PlayerController.currentGun = Instantiate(magicParticles[3], weaponHolder.position, weaponHolder.rotation) as ShootShotGun;
+                                //PlayerController.currentGun.transform.parent = weaponHolder;
+                            }
+                            
+                            if(magicParticles[magicAttack[i]] == magicParticles[1])
 
+                            {
+                                
+
+                                Debug.Log("pistooli");
+                               
+                                magicParticles[1].transform.SetParent(weaponHolder);
+                                magicParticles[1].transform.localPosition = Vector3.zero;
+                                magicParticles[1].transform.localRotation = Quaternion.identity;
+                                
+                                
+                                //Instantiate(magicParticles[3]);
+                            
+                                //magicParticles[magicAttack[i]].transform.SetParent(weaponHolder);
+                                //magicParticles[magicAttack[i]].transform.localPosition = Vector3.zero;
+                                //magicParticles[magicAttack[i]].transform.localRotation = Quaternion.identity;
+                                
+                            }
+                            //magicParticles[3].transform.parent = weaponHolder;
+                                //PlayerController.currentGun = Instantiate(magicParticles[3], weaponHolder.position, weaponHolder.rotation) as ShootShotGun;
+                                //PlayerController.currentGun.transform.parent = weaponHolder;
+                            //}
+                            //magicParticles[3].transform.SetParent(weaponHolder);
+
+                            //if(magicParticles(i) == 1 || magicParticles(i) == 3)
+                            //{
+                            //    magicParticles[magicAttack[i]].transform.SetParent(weaponHolder);
+                            //}
+                            //else
+                            //
+                                //Instantiate(magicParticles[magicAttack[i]], weaponHolder.transform.position, weaponHolder.transform.rotation);
+                            
+                        
+                   }
+                }
+            }
         }
     }
     public void OpenMenu()

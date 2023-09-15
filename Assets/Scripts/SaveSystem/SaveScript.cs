@@ -8,6 +8,10 @@ public class SaveScript : MonoBehaviour
 
     public static string pname = "Testi";
     
+    public static GameObject spawnPoint;
+    public static GameObject theTarget;
+
+    public static GameObject weaponHand;
     
     
     // Start is called before the first frame update
