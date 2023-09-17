@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     private Camera cam;
     private Animator animator; // Lisätty Animator-komponentti
     public static bool canMove = true;
-
+    public bool isDead;
     public static bool moving = false; //kauppaa varten, jos o vauhdis niin katoo
 
 
@@ -47,15 +47,21 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        ControlMouse();
-        if (Input.GetButtonDown("Shoot"))
-            {
-                if(canMove == true)
-                {
-                    shotgun.Shoot();
-                    //ShootShotGun.Shoot();
-                }
-            }
+        if (!isDead)
+        {
+            ControlMouse();
+            //ControlWASD();
+        }
+
+        // if (Input.GetButtonDown("Shoot"))
+        //     {
+        //         if(canMove == true)
+        //         {
+
+        //             shotgun.Shoot();
+        //             //ShootShotGun.Shoot();
+        //         }
+        //     }
         //ControlWASD();
         
         // Gun Input
