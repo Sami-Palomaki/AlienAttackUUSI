@@ -12,6 +12,8 @@ public class PickUps : MonoBehaviour
 
     public bool shotgun = false; 
 
+    public float rotationSpeed = 30.0f;
+
     private void OnTriggerEnter(Collider other)
     {
         
@@ -60,5 +62,10 @@ public class PickUps : MonoBehaviour
     {
         InventoryItems.newIcon = number;
         InventoryItems.iconUpdate = true;
+    }
+
+    void Update()
+    {
+        transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
     }
 }
