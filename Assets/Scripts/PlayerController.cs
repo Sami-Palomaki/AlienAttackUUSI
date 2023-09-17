@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        ControlWASD();
+        ControlMouse();
         if (Input.GetButtonDown("Shoot"))
             {
                 if(canMove == true)
