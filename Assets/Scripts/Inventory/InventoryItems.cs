@@ -47,7 +47,6 @@ public class InventoryItems : MonoBehaviour
     public bool setTwo = false;
     [HideInInspector]
     public int selected = 0;
-
     public int[] magicAttack;
 
     public GameObject[] magicParticles;

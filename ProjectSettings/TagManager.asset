@@ -7,6 +7,10 @@ TagManager:
   - Ground
   - Gun
   - GUI
+  - Enemy
+  - Wall
+  - Door
+  - TriggerZone
   layers:
   - Default
   - TransparentFX
@@ -18,6 +22,7 @@ TagManager:
   - Character
   - GUI
   - CameraGlow
+  - Wall
   - 
   - 
   - 

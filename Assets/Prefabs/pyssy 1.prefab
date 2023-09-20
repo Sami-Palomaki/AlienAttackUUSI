@@ -888,10 +888,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1891186972097287801}
   - component: {fileID: 5060460799146098659}
-  - component: {fileID: 1748827438058016263}
-  - component: {fileID: 7236780559467555569}
-  - component: {fileID: 3573696690317829286}
-  - component: {fileID: -3891240938381679644}
+  - component: {fileID: 3939536651776422537}
   m_Layer: 0
   m_Name: pyssy 1
   m_TagString: Untagged
@@ -915,8 +912,8 @@ Transform:
   - {fileID: 1256670540447021942}
   - {fileID: 7164835473668823929}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -6.246, y: -10.665, z: 0.994}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &5060460799146098659
 LineRenderer:
   serializedVersion: 2
@@ -1021,7 +1018,7 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!114 &1748827438058016263
+--- !u!114 &3939536651776422537
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1030,7 +1027,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4645182578457398500}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9fcb8f06034d5d46beb7449e4d3a2b0, type: 3}
+  m_Script: {fileID: 11500000, guid: c5640ebe34a89e54eabe851824aaa368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   collisionMask:
@@ -1039,64 +1036,16 @@ MonoBehaviour:
   rpm: 400
   spawn: {fileID: 826396964001357818}
   shellEjectionPoint: {fileID: 1256670540447021942}
-  shell: {fileID: 0}
+  shell: {fileID: 4833485131976547577, guid: 77ff5e87636c1524fb716a75c85666f1, type: 3}
   damage: 1
---- !u!114 &7236780559467555569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4645182578457398500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e888cb754898ba44935b621db52e853, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 1
-  healthPack: 0
-  pistol: 1
-  shotgun: 0
-  rotationSpeed: 30
---- !u!65 &3573696690317829286
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4645182578457398500}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.61, y: 0.36, z: 0.54}
-  m_Center: {x: 0.04, y: 0.19, z: 0.09}
---- !u!114 &-3891240938381679644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4645182578457398500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bd1562593d594a449de5cc216af98d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hintBox: {fileID: 0}
-  message: {fileID: 0}
-  objectType: 1
-  inventoryObject: {fileID: 0}
-  inventoryUsables: 1
-  skills: 0
+  crosshair: {fileID: 0}
+  ammoPickUpSound: 
+  fireSound: 
+  unloadSound: 
+  loadSound: 
+  reloadSound: 
+  pickupSound: 
+  dropSound: 
 --- !u!1 &4746475225432250174
 GameObject:
   m_ObjectHideFlags: 0
