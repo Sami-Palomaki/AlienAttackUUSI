@@ -315,7 +315,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1036780118201022971}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9fcb8f06034d5d46beb7449e4d3a2b0, type: 3}
+  m_Script: {fileID: 11500000, guid: c5640ebe34a89e54eabe851824aaa368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   collisionMask:
@@ -326,6 +326,13 @@ MonoBehaviour:
   shellEjectionPoint: {fileID: 9151459863296673730}
   shell: {fileID: 4833485131976547577, guid: 77ff5e87636c1524fb716a75c85666f1, type: 3}
   damage: 3
+  ammoPickUpSound: 
+  fireSound: ShotgunShoot
+  unloadSound: 
+  loadSound: 
+  reloadSound: 
+  pickupSound: 
+  dropSound: 
 --- !u!1 &2408530564607314400
 GameObject:
   m_ObjectHideFlags: 0

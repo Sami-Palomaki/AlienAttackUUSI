@@ -47,11 +47,8 @@ public class InventoryItems : MonoBehaviour
     public bool setTwo = false;
     [HideInInspector]
     public int selected = 0;
-
     public int[] magicAttack;
-
     public GameObject[] magicParticles;
-    //public WeaponSlot weaponSlot;
     public Transform weaponHolder;
 
     
@@ -178,6 +175,8 @@ public class InventoryItems : MonoBehaviour
                             if(magicParticles[magicAttack[i]] == magicParticles[1])
 
                             {
+
+
                                 magicParticles[3].transform.SetParent(null);
 
                                 Debug.Log("pistooli");

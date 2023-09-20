@@ -20,44 +20,53 @@ public class ShootShotGun : MonoBehaviour
     public Rigidbody shell;
     //public Gun gunToCollect;
     public float damage = 3;
+    public Crosshair crosshair;
 
 
     // System:
     private float secondsBetweenShots;
     private float nextPossibleShootTime;
 
-    //[Header("AudioSource")]
-    /*public string ammoPickUpSound;
+    [Header("AudioSource")]
+    public string ammoPickUpSound;
     public string fireSound;
     public string unloadSound;
     public string loadSound;
     public string reloadSound;
     public string pickupSound;
-    public string dropSound;*/
+    public string dropSound;
+
+    void Start()
+    {   
+        crosshair = FindObjectOfType<Crosshair>();
+        secondsBetweenShots = 60/rpm;
+        if (GetComponent<LineRenderer>())
+        {
+            tracer = GetComponent<LineRenderer>();
+        }
+    }
+
     public void Update()
     {
-        //ControlMouse();
-        //ControlWASD();
-        
-        // Gun Input
-        //if (currentGun)
-            //{
-            //ShootShotGun shootShotGun = new ShootShotGun();
-            if (Input.GetButtonDown("Shoot"))
+        if (Input.GetButtonDown("Shoot"))
+        {
+            if(PlayerController.canMove == true)
             {
-                
-                    Shoot();
-           
+                Debug.Log("Shoot!!!");
+                Shoot();
             }
+        }       
     }
+
     public void Shoot()
     {
-        
-        
+        if(CanShoot())
+        {
             // CALCULATE NEW VECTOR3, y=0
 
-
-            Ray ray = new Ray(spawn.position, spawn.forward);
+            Vector3 targetDir = crosshair.transform.position - transform.position;
+            Vector3 fixedDir = new Vector3(targetDir.x, 0, targetDir.z);
+            Ray ray = new Ray(spawn.position, fixedDir.normalized);
             RaycastHit hit;
 
             float shotDistance = 20;
@@ -86,18 +95,9 @@ public class ShootShotGun : MonoBehaviour
             // Tuottaa hylsyjä ampuessa
             Rigidbody newShell = Instantiate(shell, shellEjectionPoint.position, Quaternion.identity) as Rigidbody;
             newShell.AddForce(shellEjectionPoint.forward * Random.Range(150f, 200f) + spawn.forward * Random.Range(-10f, 10f));
-        
+        }
     }
     
-
-    void Start()
-    {
-        secondsBetweenShots = 60/rpm;
-        if (GetComponent<LineRenderer>())
-        {
-            tracer = GetComponent<LineRenderer>();
-        }            
-    }
 
     /*public void ShootContinuous()
     {
