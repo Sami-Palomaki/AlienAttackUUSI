@@ -28,14 +28,20 @@ public class ShootShotGun : MonoBehaviour
     private float secondsBetweenShots;
     private float nextPossibleShootTime;
 
-    //[Header("AudioSource")]
-    /*public string ammoPickUpSound;
+    [Header("AudioSource")]
+    public string ammoPickUpSound;
     public string fireSound;
     public string unloadSound;
     public string loadSound;
     public string reloadSound;
     public string pickupSound;
-    public string dropSound;*/
+    public string dropSound;
+    
+    
+    
+    
+    
+    
     public void Update()
     {
         //ControlMouse();
@@ -86,7 +92,7 @@ public class ShootShotGun : MonoBehaviour
 
             nextPossibleShootTime = Time.time + secondsBetweenShots;
 
-            //AudioManager.instance.Play(fireSound, this.gameObject);
+            AudioManager.instance.Play(fireSound, this.gameObject);
             Debug.DrawRay(ray.origin, ray.direction * shotDistance, Color.red, 1);
 
             // Asettaa LineRendererin luodin radaksi

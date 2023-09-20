@@ -320,9 +320,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   number: 3
-  healthPack: 0
-  pistol: 0
-  shotgun: 1
+  healthpacktestii: 0
+  pyssy: 0
+  pump_action_rifle: 1
   rotationSpeed: 30
 --- !u!65 &8926975652865945864
 BoxCollider:
