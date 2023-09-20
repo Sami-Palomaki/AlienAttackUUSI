@@ -21,8 +21,10 @@ public class ShootShotGun : MonoBehaviour
     //public Gun gunToCollect;
     public float damage = 3;
 
-
+    public GameObject muzzleFlashPrefab;
     // System:
+
+    [SerializeField] Transform muzzlePosition;
     private float secondsBetweenShots;
     private float nextPossibleShootTime;
 
@@ -46,10 +48,20 @@ public class ShootShotGun : MonoBehaviour
             if (Input.GetButtonDown("Shoot"))
             {
                 
-                    Shoot();
+                Shoot();
+
+                Quaternion muzzleRot = Quaternion.LookRotation(spawn.forward, Vector3.up);
+// Luo muzzle flash prefab        
+                GameObject muzzleFlash = Instantiate(muzzleFlashPrefab, muzzlePosition.position, muzzleRot);
+
+        // Tuhoa muzzle flash prefab tietyn ajan kuluttua        
+                Destroy(muzzleFlash, 0.1f);
            
             }
     }
+    
+    
+    
     public void Shoot()
     {
         

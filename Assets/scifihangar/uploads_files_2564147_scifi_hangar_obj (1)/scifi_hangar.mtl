@@ -1,0 +1,177 @@
+# Blender MTL File: 'None'
+# Material Count: 13
+
+newmtl hangar_01_D
+Ns 18.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump -bm 0.300000 hangar_01_N.tga
+map_Kd hangar_01_D.tga
+map_d hangar_01_D.tga
+
+newmtl hangar_02_D
+Ns 18.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.400000 0.400000 0.400000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump -bm 0.300000 hangar_02_N.tga
+map_Kd hangar_02_D.tga
+map_Ke hangar_02_emissive.tga
+map_d hangar_02_D.tga
+
+newmtl hangar_03_D
+Ns 18.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump -bm 0.300000 hangar_03_N.tga
+map_Kd hangar_03_D.tga
+map_d hangar_03_D.tga
+
+newmtl hangar_03_D.1
+Ns 18.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump -bm 0.300000 hangar_03_N.tga
+map_Kd hangar_03_D.tga
+map_d hangar_03_D.tga
+
+newmtl hangar_04_D
+Ns 18.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump -bm 0.300000 hangar_04_N.tga
+map_Kd hangar_04_D.tga
+map_Ke hangar_04_emissive.tga
+map_d hangar_04_D.tga
+
+newmtl hangar_04_D.1
+Ns 18.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump -bm 0.300000 hangar_04_N.tga
+map_Kd hangar_04_D.tga
+map_Ke hangar_04_emissive.tga
+map_d hangar_04_D.tga
+
+newmtl hangar_04_D.2
+Ns 18.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump -bm 0.300000 hangar_04_N.tga
+map_Kd hangar_04_D.tga
+map_Ke hangar_04_emissive.tga
+map_d hangar_04_D.tga
+
+newmtl hangar_04_D.3
+Ns 18.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump -bm 0.300000 hangar_04_N.tga
+map_Kd hangar_04_D.tga
+map_Ke hangar_04_emissive.tga
+map_d hangar_04_D.tga
+
+newmtl hangar_04_D.4
+Ns 18.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump -bm 0.300000 hangar_04_N.tga
+map_Kd hangar_04_D.tga
+map_Ke hangar_04_emissive.tga
+map_d hangar_04_D.tga
+
+newmtl hangar_em
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd hangar_em.tga
+map_Ke hangar_em.tga
+map_d hangar_em.tga
+
+newmtl hangar_em.1
+Ns 179.999996
+Ka 1.000000 1.000000 1.000000
+Kd 0.588000 0.588000 0.588000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd hangar_em.tga
+map_Ke hangar_em.tga
+map_d hangar_em.tga
+
+newmtl hangar_floor_D
+Ns 18.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump -bm 0.300000 hangar_floor_N.tga
+map_Kd hangar_floor_D.tga
+map_d hangar_floor_D.tga
+
+newmtl hangar_floor_D.1
+Ns 18.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump -bm 0.300000 hangar_floor_N.tga
+map_Kd hangar_floor_D.tga
+map_d hangar_floor_D.tga

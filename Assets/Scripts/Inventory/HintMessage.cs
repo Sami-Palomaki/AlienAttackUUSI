@@ -59,8 +59,17 @@ public class HintMessage : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
                 hintBox.SetActive(false);
                 if(inventoryUsables == true)
                 {
+                
+                
                 inventoryObject.GetComponent<InventoryItems>().selected = objectType;
                 inventoryObject.GetComponent<InventoryItems>().set = true;
+                }
+                if(skills == true)
+                {
+                
+                
+                inventoryObject.GetComponent<InventoryItems>().selected = objectType;
+                inventoryObject.GetComponent<InventoryItems>().setTwo = true;
                 }
 
             }
@@ -81,19 +90,19 @@ public class HintMessage : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         }
         if(objectType == 1)
         {
-            message.text = /*InventoryItems.pistol.ToString() +*/ "Basic pistol designed for Alien slaying";
+            message.text = /*InventoryItems.pyssy.ToString() +*/ "Basic pistol designed for Alien slaying";
         }
 
         if(objectType == 2)
         {
-            message.text = InventoryItems.healthPack.ToString() + " Health kits that heals you once whenever you want 666 HPs";
+            message.text = InventoryItems.healthpacktestii.ToString() +  "Health kits that heals you once whenever you want 666 HPs";
         }
         if(objectType == 3)
         {
-            message.text = /*InventoryItems.shotgun.ToString() +*/ "Shotgun that makes shitloads of damage";
+            message.text = /*InventoryItems.pump_action_rifle.ToString() +*/ "Shotgun that makes shitloads of damage";
         }
         
-        if(objectType == 32)
+        if(objectType == 33)
         {
             message.text = /*InventoryItems.shotgun.ToString() + */ "Heal: Heals hero based on wisdom stat";
         }

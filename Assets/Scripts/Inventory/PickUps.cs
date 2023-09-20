@@ -6,11 +6,12 @@ public class PickUps : MonoBehaviour
 {
     public int number;
 
-    public bool healthPack = false;
+    
+    public bool healthpacktestii = false;
 
-    public bool pistol = false;
+    public bool pyssy = false;
 
-    public bool shotgun = false; 
+    public bool pump_action_rifle = false; 
 
     public float rotationSpeed = 30.0f;
 
@@ -20,33 +21,34 @@ public class PickUps : MonoBehaviour
         
         if(other.CompareTag("Player"))
         {
-            if(healthPack == true)
+            if(healthpacktestii == true)
             {
-                if(InventoryItems.healthPack == 0)
+                if(InventoryItems.healthpacktestii == 0)
                 {
                     DisplayIcons();
                 }
-                InventoryItems.healthPack++;
+                InventoryItems.healthpacktestii++;
+                
                 Destroy(gameObject);
             }
                  
            
-            else if(pistol == true)
+            else if(pyssy == true)
             {
-                if(InventoryItems.pistol == 0)
+                if(InventoryItems.pyssy == 0)
                 {
                     DisplayIcons();
                 }
-                InventoryItems.pistol++;
+                InventoryItems.pyssy++;
                 Destroy(gameObject);
             }
-            else if(shotgun == true)
+            else if(pump_action_rifle == true)
             {
-                if(InventoryItems.shotgun == 0)
+                if(InventoryItems.pump_action_rifle == 0)
                 {
                     DisplayIcons();
                 }
-                InventoryItems.shotgun++;
+                InventoryItems.pump_action_rifle++;
                 Destroy(gameObject);
             }
             else

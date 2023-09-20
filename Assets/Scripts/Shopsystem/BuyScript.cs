@@ -70,7 +70,7 @@ public class BuyScript : MonoBehaviour
 
     void UpdateStoreAmt()
     {
-        inventoryItems[0] = InventoryItems.healthPack; //tähän lisäilen kans itemin mukaan
+        inventoryItems[0] = InventoryItems.healthpacktestii; //tähän lisäilen kans itemin mukaan
         //inventoryItems[1] = inventoryItems.shotGun;
 
     }
@@ -83,7 +83,7 @@ public class BuyScript : MonoBehaviour
     {
         if(item == 0)
         {
-            InventoryItems.healthPack++;
+            InventoryItems.healthpacktestii++;
 
         }
         /*if(item == 1)
