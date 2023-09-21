@@ -23,14 +23,13 @@ TagManager:
   - GUI
   - CameraGlow
   - Wall
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - PlayerProjectile
+  - PlayerShield
+  - Enemy
+  - EnemyProjectile
+  - EnemyShield
+  - Asteroid
   - 
   - 
   - 
