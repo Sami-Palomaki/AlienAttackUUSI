@@ -2664,6 +2664,7 @@ MonoBehaviour:
   messageOn:
     serializedVersion: 2
     rgba: 4282908671
+  shopUI: {fileID: 0}
 --- !u!1 &5518290273813157975
 GameObject:
   m_ObjectHideFlags: 0
@@ -4193,6 +4194,7 @@ MonoBehaviour:
   messageOn:
     serializedVersion: 2
     rgba: 4282908671
+  shopUI: {fileID: 0}
 --- !u!1 &8034856123035809013
 GameObject:
   m_ObjectHideFlags: 0
