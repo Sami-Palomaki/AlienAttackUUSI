@@ -19,7 +19,7 @@ public class Health : MonoBehaviour
     
     public void Start()
     {
-        health = maxHealth;
+        // health = maxHealth;
         anim = GetComponentInChildren<Animator>();
     }
 
@@ -47,18 +47,18 @@ public class Health : MonoBehaviour
 
     
     
-    public void Heal(int amount)
-    {
-        if(player !=null && health < maxHealth){
-        health += amount;
+    // public void Heal(int amount)
+    // {
+    //     if(player !=null && health < maxHealth){
+    //     health += amount;
 
 
-        if (health > maxHealth)
-        {
-            health = maxHealth;
-        }
-        }
-    }
+    //     if (health > maxHealth)
+    //     {
+    //         health = maxHealth;
+    //     }
+    //     }
+    // }
 
     
 
