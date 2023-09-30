@@ -7,7 +7,8 @@ public class Asteroid : MonoBehaviour, IDamageable
 {
     [SerializeField] private FracturedAsteroid _fracturedAsteroidPrefab;
     [SerializeField] private Detonator _explosionPrefab;
-    
+    [SerializeField] private int asteroidHealth = 30;
+        
     private Transform _transform;
 
     private void Awake()
@@ -17,11 +18,17 @@ public class Asteroid : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damage, Vector3 hitPosition)
     {
-        FractureAsteroid(hitPosition);
+        asteroidHealth -= damage;
+
+        if (asteroidHealth <= 0)
+        {
+            FractureAsteroid(hitPosition);
+        }
     }
 
     private void FractureAsteroid(Vector3 hitPosition)
     {
+
         if (_fracturedAsteroidPrefab != null)
         {
             Instantiate(_fracturedAsteroidPrefab, _transform.position, _transform.rotation);

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BlockFighter : MonoBehaviour
 {
+    public Transform thisShip;
     public GameObject ProjectileFab;
     public Rigidbody r;
     public Transform projectileSpawnPoint; // Lisätään spawn-piste ammuksille
@@ -41,11 +42,16 @@ public class BlockFighter : MonoBehaviour
         transform.Rotate(pitch, yaw, roll);
     }
 
-    void Thrust()
+    // void Thrust()
+    // {
+    //     float throttle = Input.GetAxis("Throttle");
+    //     Vector3 thrustDirection = transform.forward * throttle;
+    //     r.AddForce(thrustDirection * boostSpeed);
+    // }
+
+     void Thrust()
     {
-        float throttle = Input.GetAxis("Throttle");
-        Vector3 thrustDirection = transform.forward * throttle;
-        r.AddForce(thrustDirection * boostSpeed);
+        thisShip.position += thisShip.forward * boostSpeed * Time.deltaTime * Input.GetAxis("Throttle");
     }
 
     void FireProjectile()
